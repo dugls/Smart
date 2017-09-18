@@ -64,7 +64,7 @@ export class LettersComponent implements OnInit {
 		this.hid = (this.hid === 'hide' ? 'show' : 'hide')
 	}
 
-  goals: Goals[];
+  goals: Goals[] = [];
   goal: string;
 
   constructor(private dataService: DataService) { 

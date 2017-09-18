@@ -20,19 +20,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/goals', function(req, res){
-	console.log(req.body.goal);
+	console.log('Get request');
+	Goal.find({})
+	.exec(function(err, goals){
+		if (err){
+			console.log('Error retrieving goals');
+		}else {
+			res.json(goals);
+		}
+	});
 });
 
 router.post('/goal'	, function(req, res){
 	console.log('Post a goal');
-    var newGoal= new Goal({ goal: req.body.goal});
+    var newGoal = new Goal();
+    newGoal.goal = req.body.goal;
     newGoal.save(function(err, insertedGoal){
-         if (err){
+        if (err){
             console.log('Error saving goal');
-          } else {
-             res.send(insertedGoal);
-          }
-     });
+        }else {
+            res.json(insertedGoal);
+        }
+    });
 });
 
 router.delete('/goals/:goal_id', function(req, res){
