@@ -76,20 +76,15 @@ export class LettersComponent implements OnInit {
 
   addGoal(event){
       event.preventDefault();
-      let newGoal = {
-        goals: this.goals
+      var newGoal = {
+        goal: this.goal
       }
       this.dataService.addGoal(newGoal)
         .subscribe(goal => {
              this.goals.push(goal);
-             this.goal = "";
         })
       }
-onKeyDown(event){
-  if (event.key === 'Enter'){
-    console.log('dms');  
-  }
-}
+
 
   ngOnInit() {
   }
