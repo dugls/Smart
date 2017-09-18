@@ -44,9 +44,9 @@ router.post('/goal'	, function(req, res){
         }
     });});
 
-router.delete('/goals/:goal_id', function(req, res){
+router.delete('/goal/:id', function(req, res){
 	console.log('delete goal');
-	Goal.findByIdAndRemove(req.params.goal_id, function(err, deletedGoal){
+	Goal.findByIdAndRemove(req.params.id, function(err, deletedGoal){
 		if (err) {
 			res.send('Error deleting goal');
 		}else{

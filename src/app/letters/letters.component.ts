@@ -89,7 +89,7 @@ export class LettersComponent implements OnInit {
       var goals = this.goals;
 
       this.dataService.deleteGoal(id).subscribe(data => {
-        if(data.n == 1){ 
+        if(data.n === 1){ 
           for(var i = 0; i < goals.length; i++ ){
             if(goals[i]._id == id){
               goals.splice(i, 1);
