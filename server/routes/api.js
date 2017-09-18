@@ -33,6 +33,7 @@ router.get('/goals', function(req, res){
 
 router.post('/goal'	, function(req, res){
 	console.log('Post a goal');
+ 
     var newGoal = new Goal();
     newGoal.goal = req.body.goal;
     newGoal.save(function(err, insertedGoal){
@@ -41,8 +42,7 @@ router.post('/goal'	, function(req, res){
         }else {
             res.json(insertedGoal);
         }
-    });
-});
+    });});
 
 router.delete('/goals/:goal_id', function(req, res){
 	console.log('delete goal');

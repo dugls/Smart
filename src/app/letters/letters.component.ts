@@ -1,4 +1,4 @@
-import { Component, OnInit,
+ import { Component, OnInit,
 			trigger,
 			state,
 			style,
@@ -84,6 +84,20 @@ export class LettersComponent implements OnInit {
              this.goals.push(goal);
         })
       }
+
+  deleteGoal(id){
+      var goals = this.goals;
+
+      this.dataService.deleteGoal(id).subscribe(data => {
+        if(data.n == 1){ 
+          for(var i = 0; i < goals.length; i++ ){
+            if(goals[i]._id == id){
+              goals.splice(i, 1);
+            }
+          }
+        }
+      })
+  }
 
 
   ngOnInit() {

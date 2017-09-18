@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class DataService {
 
   constructor(private http:Http) {
-  		console.log("ZAPAHALO SUKA DA");
+  		
    }
    getGoals(){
    	return this.http.get("http://localhost:3000/api/goals")
@@ -18,7 +18,10 @@ export class DataService {
    		headers.append("Content-Type", "application/json");
    		return this.http.post("http://localhost:3000/api/goal", JSON.stringify(newGoal), {headers:headers})
    		.map(res => res.json());
-
 }
+  deleteGoal(id){
+    return this.http.delete("http://localhost:3000/api/goal/"+id)
+      .map(res => res.json());
+  }
   
 }

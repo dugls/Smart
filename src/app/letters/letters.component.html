@@ -25,7 +25,8 @@
 		</div>
 			<div class="col-md-2 list">
 			<ul >
-        		<li *ngFor='let goal of goals' >{{goal.goal}}</li>
+        		<li *ngFor='let goal of goals'>{{goal.goal}} <button type = "submit" class="glyphicon-remove" (click) = "deleteGoal(goal._id)"></button></li>
+
         	</ul>
 		</div>						
 	</div>
