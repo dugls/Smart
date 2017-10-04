@@ -1,13 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 .row{
-	background: orange;
+	background: #EE82EE	;
 	height:100vh;
 }
 .main {
 	height: 100vh;
+	text-align: center;
 }
 .letters{
-	background: green;
+	background: #EE82EE	;
 	height: 100vh;
 }
 .nopadding {
@@ -63,6 +64,20 @@ li{
 
 }
 .list{
-	background: pink;
+	background:#EE82EE	;
 	height: 100vh;
+}
+.note{
+	text-align: center;
+}
+h1{
+}
+h5{
+	font-family: 'Germania One', cursive; 
+}
+p{
+	width: 500px;
+	font-family: 'Germania One', cursive; 
+	margin: 0 auto;
+	font-size: 17px;
 }
