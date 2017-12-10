@@ -1,0 +1,25 @@
+<div  class = 'container-fluid' >
+	<div class = 'row' *ngIf = '!animate' >
+   <div id = 'description'>
+      <div class = 'col-md-12 animated bounce' id = 'description'>
+        <h1>S.M.A.R.T</h1>
+        <p>is a mnemonic acronym, giving criteria to guide in the setting of objectives, for example in project management, employee-performance management and personal development. The letters S and M usually mean specific and measurable. Possibly the most common version has the remaining letters referring to achievable, realistic and time-bound. However, the term's inventor had a slightly different version and the letters have meant different things to different authors, as described below. Additional letters have been added by some authors.</p>
+      </div>
+   </div>
+		<div class="col-md-8 col-md-push-2">
+			<form>
+				<!--Main Input-->
+    			<div class="input-group">
+      				<input type="text" class="form-control" placeholder="Search for..." name = 'main-input' [(ngModel)] = 'mainGoal'>
+      				<span class="input-group-btn">
+        				<button href ='specific' routerLink="/specific" routerLinkActive="active" class="btn btn-primary" type="submit" 
+        				(click) = 'addGoal(mainGoal)'
+						    (click) = 'toggle()'
+        				>Go!</button>
+      				</span>
+    			</div>
+    			<!---->
+  			</form>
+		</div>
+	</div>
+</div>
